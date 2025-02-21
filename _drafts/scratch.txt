@@ -1,0 +1,34 @@
+*** Helper for jekyll (within vscode terminal): ***
+
+  ** Drafts **
+  # Creating a new draft
+	bundle exec jekyll draft "My new draft"
+
+  # Rename draft
+	bundle exec jekyll rename _drafts/my-new-draft.md "My Renamed Draft"
+
+  # Publish draft
+  bundle exec jekyll publish _drafts/my-new-draft.md
+
+  # Specify a date to publish
+  bundle exec jekyll publish _drafts/my-new-draft.md --date 2014-01-24
+
+  ** Posts **
+  # Creating a new post
+  bundle exec jekyll post "My New Post"
+
+  # Creating a new post and adding to a collection
+  bundle exec jekyll compose "My New Post" --collection "posts"
+
+  # Unpublish post
+  bundle exec jekyll unpublish _posts/2014-01-24-my-new-draft.md
+
+  # Executing jekyll server (located at http://localhost:4000)
+  bundle exec jekyll serve --drafts
+
+# Converting images to blog format
+convert input.jpg -resize 1200x800 output.jpg
+convert input.jpg -quality 85 -strip output.jpg
+
+for img in *.jpg; do convert "$img" -resize 1200x800 -quality 85 -strip "optimized/$img"; done
+
